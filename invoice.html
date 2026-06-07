@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice | NVIDIA Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/invoice.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <a href="/index.html" class="back">← Kembali ke Produk</a>
+
+    <header class="hero">
+      <p class="tag">ORDER SUCCESS 🎉</p>
+      <h1>Pesanan Berhasil Diproses</h1>
+      <p class="subtitle" id="thanksMessage">
+        Terima kasih telah berbelanja di NVIDIA Store
+      </p>
+    </header>
+
+    <section class="invoice-layout">
+
+      <!-- INVOICE -->
+      <article class="invoice-card">
+
+        <div class="invoice-head">
+          <h2>Invoice</h2>
+          <span class="status">PAID</span>
+        </div>
+
+        <div class="meta-grid">
+          <div>
+            <p class="meta-label">Nomor Invoice</p>
+            <strong id="invId">-</strong>
+          </div>
+
+          <div>
+            <p class="meta-label">Tanggal</p>
+            <strong id="invDate">-</strong>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Produk</th>
+                <th>Harga</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td id="pName">-</td>
+                <td id="pPrice">Rp 0</td>
+                <td id="pQty">1</td>
+                <td id="pSub">Rp 0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="totals">
+          <div><span>Subtotal</span><strong id="tSub">Rp 0</strong></div>
+          <div><span>Biaya Layanan</span><strong id="tFee">Rp 0</strong></div>
+          <div class="grand"><span>Total</span><strong id="tGrand">Rp 0</strong></div>
+        </div>
+
+      </article>
+
+      <!-- CUSTOMER -->
+      <aside class="customer-card">
+
+        <h2>Data Customer</h2>
+
+        <div class="customer-list">
+          <div><span>Nama</span><strong id="cNama">-</strong></div>
+          <div><span>No HP</span><strong id="cHp">-</strong></div>
+          <div><span>Alamat</span><strong id="cAlamat">-</strong></div>
+        </div>
+
+        <div class="actions">
+          <button id="downloadBtn" class="btn btn-primary">Unduh Invoice</button>
+          <a href="/pesan.html" class="btn btn-secondary">Pesan Lagi</a>
+        </div>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script/Invoice.js" defer></script>
+
+</body>
+</html>

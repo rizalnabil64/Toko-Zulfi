@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesan Produk NVIDIA GPU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/pesan.css" />
+</head>
+<body>
+  <main class="container">
+    <a href="/index.html" class="back">← Kembali ke Produk</a>
+
+    <header class="hero">
+      <p class="tag">Checkout GPU</p>
+      <h1>Form Pemesanan Produk</h1>
+      <p class="subtitle">Isi data di bawah ini untuk menyelesaikan pesanan Anda.</p>
+    </header>
+    
+    <section class="order-layout">
+      <form id="orderForm" class="form-card" action="/invoice.html" method="get">
+        <h2>Detail Pesanan</h2>
+
+        <label for="produk">Produk</label>
+        <select id="produk" name="produk" required>
+          <option value="">Pilih Produk</option>
+          <option value="17000000" data-name="NVDIA 2080 Ti">NVDIA 2080 Ti</option>
+          <option value="26000000" data-name="NVDIA 3090 Ti">NVDIA 3090 Ti</option>
+          <option value="33390000" data-name="NVDIA 4090 Ti">NVDIA 4090 Ti</option>
+          <option value="43438000" data-name="NVDIA 5090 Ti">NVDIA 5090 Ti</option>
+          <option value="875980000" data-name="NVDIA H100">NVDIA H100</option>
+        </select>
+
+        <div class="grid-2">
+          <div>
+            <label for="harga">Harga Satuan (Rp)</label>
+            <input type="text" id="harga" readonly />
+          </div>
+          <div>
+            <label for="jumlah">Jumlah</label>
+            <div class="qty-wrap">
+              <button type="button" id="qtyMinus" class="qty-btn" aria-label="Kurangi jumlah"> − </button>
+              <input type="number" id="jumlah" value="1" min="1" required />
+              <button type="button" id="qtyPlus" class="qty-btn" aria-label="Tambah jumlah"> + </button>
+            </div>
+          </div>
+        </div>
+
+        <label for="total">Total Bayar (Rp)</label>
+        <input type="text" id="total" readonly class="total-input" />
+
+        <h2 class="section-title">Data Penerima</h2>
+
+        <label for="nama">Nama Penerima</label>
+        <input id="nama" type="text" placeholder="Masukkan nama lengkap" required />
+
+        <label for="nohp">No HP</label>
+        <input id="nohp" type="text" placeholder="08xxxxxxxxxx" required />
+
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" placeholder="Masukkan alamat lengkap" required></textarea>
+
+        <button type="submit" class="submit-btn">Pesan Sekarang</button>
+      </form>
+
+      <aside class="summary-card" id="summary">
+        <h2>Ringkasan Pesanan</h2>
+        <p id="summaryText" class="summary-text">Silakan pilih produk untuk melihat ringkasan pesanan.</p>
+
+        <div class="summary-list">
+          <div><span>Produk</span><strong id="sProduk">-</strong></div>
+          <div><span>Harga</span><strong id="sHarga">Rp 0</strong></div>
+          <div><span>Jumlah</span><strong id="sJumlah">1</strong></div>
+          <div><span>Subtotal</span><strong id="sSubtotal">Rp 0</strong></div>
+          <div><span>Biaya Layanan</span><strong id="sFee">Rp 12.000</strong></div>
+          <div class="grand-total"><span>Total Akhir</span><strong id="sGrandTotal">Rp 12.000</strong></div>
+        </div>
+
+        <p class="secure-note">🔒 Pembayaran aman (simulasi) • Data Anda tidak dibagikan.</p>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../script/pesan.js" defer></script>
+</body>
+</html>

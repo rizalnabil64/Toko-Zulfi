@@ -1,0 +1,244 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0b0f19;
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    background:#111827;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#76b900;
+    font-size:1.3rem;
+    font-weight:700;
+}
+
+.nav-links a{
+    color:#e5e7eb;
+    margin-left:25px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#76b900;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#76b900,#2ecc71);
+    text-align:center;
+    padding:100px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+/* ANIMASI KETIK */
+#judul{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+
+    border-right:4px solid white;
+
+    width:0;
+
+    animation:
+    mengetik 4s steps(22,end) infinite alternate,
+    kedip .7s infinite;
+}
+
+/* EFEK MENGETIK */
+@keyframes mengetik{
+    from{
+        width:0;
+    }
+
+    to{
+        width:18ch;
+    }
+}
+
+/* CURSOR BERKEDIP */
+@keyframes kedip{
+    50%{
+        border-color:transparent;
+    }
+}
+
+header p{
+    font-size:1.1rem;
+}
+
+/* SECTION */
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+h2{
+    text-align:center;
+    color:#76b900;
+    margin-bottom:50px;
+    font-size:2.2rem;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+.about p{
+    line-height:1.8;
+    color:#d1d5db;
+}
+
+/* PRODUCT */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1f2937;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.card h3{
+    color:#76b900;
+    margin-bottom:10px;
+}
+
+.price{
+    margin-bottom:20px;
+    color:#e5e7eb;
+    font-size:1.05rem;
+}
+
+/* BUTTON */
+.buy-btn{
+    margin-top:auto;
+    display:block;
+    text-align:center;
+    width:100%;
+    padding:12px;
+    background:#76b900;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.buy-btn:hover{
+    background:#5f9400;
+    transform:scale(1.03);
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    background:#76b900;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.contact a:hover{
+    background:#5f9400;
+}
+
+/* FOOTER */
+footer{
+    background:#111827;
+    text-align:center;
+    padding:25px;
+    color:#9ca3af;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        text-align:center;
+    }
+
+    .nav-links a{
+        margin:0 10px;
+    }
+
+    header h1{
+        font-size:2.2rem;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
